@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
-import { Box, TextField, Button, Grid } from '@mui/material';
+import { Box, Button, Grid, Stack, Typography, Switch } from '@mui/material';
 import { ReactComponent as Sidebar } from "../assets/images/bg-sidebar-desktop.svg"
+
+import { ReactComponent as Arcade } from "../assets/images/icon-arcade.svg"
+import { ReactComponent as Advanced } from "../assets/images/icon-advanced.svg"
+import { ReactComponent as Pro } from "../assets/images/icon-pro.svg"
 
 export class SelectPlan extends Component {
 
@@ -16,11 +20,10 @@ export class SelectPlan extends Component {
 
     render() {
         const { values, handleChange } = this.props
-        console.log(values)
 
         return (
             <>
-                <div className='main' style={{ width: 1000, position: "fixed", top: "10%", left: "20%" }}>
+                <Box className='main' sx={{ boxShadow: 1 }} style={{ width: 1000, height: 568, position: "fixed", top: "10%", left: "20%" }}>
                     <Grid container>
                         <Grid item lg={3}>
                             <Sidebar style={{ position: "absolute" }} />
@@ -60,28 +63,35 @@ export class SelectPlan extends Component {
                             <Box style={{ display: "flex", flexDirection: "column", alignContent: "center", flexWrap: "wrap" }}>
                                 <h1 style={{ marginBottom: 0 }}>Select Your Plan</h1>
                                 <p style={{ marginTop: 0 }}>You have the option of monthly or yearly billing</p>
-                                <p>Name</p>
-                                <TextField
-                                    sx={{ width: 550 }}
-                                    placeholder="Enter Your Name"
-                                    onChange={handleChange("Name")}
-                                    defaultValue={values.Name}
-                                />
-                                <p>Email Address</p>
-                                <TextField
-                                    sx={{ width: 550 }}
-                                    placeholder="Enter Your Email Address"
-                                    onChange={handleChange("EmailAddress")}
-                                    defaultValue={values.EmailAddress}
-                                />
-                                <p>Name</p>
-                                <TextField
-                                    sx={{ width: 550 }}
-                                    placeholder="Enter Your Phone Number"
-                                    onChange={handleChange("PhoneNumber")}
-                                    defaultValue={values.PhoneNumber}
-                                />
-                                <div>
+
+                                <div className='select' style={{ display: 'flex', flexDirection: "row", justifyContent: 'center', marginTop: 30 }}>
+                                    <Button sx={{ display: 'flex', flexDirection: 'column', width: 160 }}>
+                                        <Arcade />
+                                        <p>Arcade</p>
+                                        <p>$9/mo</p>
+                                    </Button>
+                                    <Button sx={{ display: 'flex', flexDirection: 'column', width: 160 }}>
+                                        <Advanced />
+                                        <p>Advanced</p>
+                                        <p>$12/mo</p>
+                                    </Button>
+                                    <Button sx={{ display: 'flex', flexDirection: 'column', width: 160 }}>
+                                        <Pro />
+                                        <p>Pro</p>
+                                        <p>$15/mo</p>
+                                    </Button>
+
+                                </div>
+
+                                <Stack direction="row" spacing={1} alignItems="center" justifyContent="center">
+                                    <Typography>Monthly</Typography>
+                                    <Switch defaultChecked />
+                                    <Typography>Yearly</Typography>
+
+                                </Stack>
+
+
+                                <div className='submit'>
                                     <Button
                                         onClick={this.prev}
                                         style={{ width: 200 }}
@@ -95,7 +105,7 @@ export class SelectPlan extends Component {
                             </Box>
                         </Grid>
                     </Grid>
-                </div>
+                </Box>
 
             </>
         )

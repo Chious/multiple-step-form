@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
+
 import FormUserDetail from "./FormUserDetail"
 import SelectPlan from "./SelectPlan"
+import PickAdd from './PickAdd'
+import FinishUp from './FinishUp'
+import Success from './Sucess'
 
 
 export class UserForm extends Component {
@@ -9,6 +13,9 @@ export class UserForm extends Component {
     Name: "",
     EmailAddress: "",
     PhoneNumber: "",
+    Year: "Monthly",
+    Plan: "",
+    Addon: "",
 
   }
 
@@ -65,15 +72,30 @@ export class UserForm extends Component {
         )
 
       case 3:
-        return <h1>Confirm</h1>
+        return (
+          <PickAdd
+            nextStep={this.nextStep}
+            prevStep={this.prevStep}
+            handleChange={this.handleChange}
+            values={values}
+          />
+        )
 
       case 4:
-        return <h1>Pick Add</h1>
+        return (<FinishUp
+          nextStep={this.nextStep}
+          prevStep={this.prevStep}
+          handleChange={this.handleChange}
+          values={values}
+        />)
 
       case 5:
-        return <h1>Finish up </h1>
-      case 6:
-        return <h1>Success</h1>
+        return (<Success
+          nextStep={this.nextStep}
+          prevStep={this.prevStep}
+          handleChange={this.handleChange}
+          values={values}
+        />)
 
 
     }

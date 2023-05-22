@@ -11,9 +11,10 @@ export class FormUserDetail extends Component {
 
   render() {
     const { values, handleChange } = this.props
+    console.log(this.props)
 
     return (<>
-      <div className='main' style={{ width: 1000, position: "fixed", top: "10%", left: "20%" }}>
+      <Box className='main' sx={{ boxShadow: 1 }} style={{ width: 1000, height: 568, position: "fixed", top: "10%", left: "20%" }}>
         <Grid container>
           <Grid item lg={3}>
             <Sidebar style={{ position: "absolute" }} />
@@ -59,6 +60,7 @@ export class FormUserDetail extends Component {
                 placeholder="Enter Your Name"
                 onChange={handleChange("Name")}
                 defaultValue={values.Name}
+                required="true"
               />
               <p>Email Address</p>
               <TextField
@@ -66,6 +68,7 @@ export class FormUserDetail extends Component {
                 placeholder="Enter Your Email Address"
                 onChange={handleChange("EmailAddress")}
                 defaultValue={values.EmailAddress}
+                required="true"
               />
               <p>Name</p>
               <TextField
@@ -73,15 +76,17 @@ export class FormUserDetail extends Component {
                 placeholder="Enter Your Phone Number"
                 onChange={handleChange("PhoneNumber")}
                 defaultValue={values.PhoneNumber}
+                required="true"
               />
 
               <Button
                 onClick={this.countinue}
+                sx={{ width: 200 }}
               >Next</Button>
             </Box>
           </Grid>
         </Grid>
-      </div>
+      </Box>
     </>
     )
   }
