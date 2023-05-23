@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Box, Checkbox, Button, Grid, FormControlLabel, FormGroup } from '@mui/material';
 import { ReactComponent as Sidebar } from "../assets/images/bg-sidebar-desktop.svg"
 
+import fee from "./addon.json"
+
 export class PickAdd extends Component {
 
 
@@ -10,25 +12,33 @@ export class PickAdd extends Component {
         this.props.nextStep();
     }
 
+
     render() {
         const { values, handleChange } = this.props
 
-        const Label = (
-            <Box
-                width="350px"
-                display="flex"
-                justifyContent="space-between"
-                alignItems="center"
-                alignContent="center"
-            >
-                <div style={{ display: 'flex', flexDirection: "column" }}>
-                    <p style={{ margin: 0 }}>Online service</p>
-                    <p style={{ margin: 0 }}>Accress to multiplayer games</p>
-                </div>
+        const Label = fee.map((e) => {
 
-                <p style={{ position: 'relative', right: 0 }}>+$10/yr</p>
-            </Box>
-        )
+            var time = (values.Year === "month") ? "mo" : "yr"
+            var money = (values.Year === "month") ? e.month : e.year
+
+            return (
+                <FormControlLabel control={<Checkbox defaultChecked />} label={
+                    <Box
+                        width="350px"
+                        display="flex"
+                        justifyContent="space-between"
+                        alignItems="center"
+                        alignContent="center"
+                    >
+                        <div style={{ display: 'flex', flexDirection: "column" }}>
+                            <p style={{ margin: 0 }}>{e.name}</p>
+                            <p style={{ margin: 0 }}>{e.description}</p>
+                        </div>
+
+                        <p style={{ position: 'relative', right: 0 }}>+${money}/{time}</p>
+                    </Box>}
+                />)
+        })
 
         return (<>
             <Box className='main' sx={{ boxShadow: 1 }} style={{ width: 1000, height: 568, position: "fixed", top: "10%", left: "20%" }}>
@@ -73,15 +83,19 @@ export class PickAdd extends Component {
                             <p style={{ marginTop: 0 }}>Add-ons enchance your gaming experience</p>
 
                             <FormGroup>
-                                <FormControlLabel control={<Checkbox defaultChecked />} label={Label} />
-                                <FormControlLabel control={<Checkbox defaultChecked />} label={Label} />
-                                <FormControlLabel control={<Checkbox defaultChecked />} label={Label} />
+                                {Label}
                             </FormGroup>
 
-                            <Button
-                                onClick={this.countinue}
-                                sx={{ width: 200 }}
-                            >Next</Button>
+                            <div className='submit'>
+                                <Button
+                                    onClick={this.prev}
+                                    style={{ width: 200 }}
+                                >Previous</Button>
+                                <Button
+                                    onClick={this.countinue}
+                                    style={{ width: 200 }}
+                                >Next</Button>
+                            </div>
                         </Box>
                     </Grid>
                 </Grid>

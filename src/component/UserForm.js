@@ -13,7 +13,7 @@ export class UserForm extends Component {
     Name: "",
     EmailAddress: "",
     PhoneNumber: "",
-    Year: "Monthly",
+    Year: "month",
     Plan: "",
     Addon: "",
 
@@ -39,8 +39,8 @@ export class UserForm extends Component {
 
   render() {
     const { step } = this.state;
-    const { Name, EmailAddress, PhoneNumber } = this.state;
-    const values = { Name, EmailAddress, PhoneNumber }
+    const { Name, EmailAddress, PhoneNumber, Year, Plan, Addon } = this.state;
+    const values = { Name, EmailAddress, PhoneNumber, Year, Plan, Addon }
 
     switch (step) {
       default:

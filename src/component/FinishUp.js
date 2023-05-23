@@ -75,10 +75,16 @@ export class FinishUp extends Component {
                                 defaultValue={values.PhoneNumber}
                             />
 
-                            <Button
-                                onClick={this.countinue}
-                                sx={{ width: 200 }}
-                            >Next</Button>
+                            <div className='submit'>
+                                <Button
+                                    onClick={this.prev}
+                                    style={{ width: 200 }}
+                                >Previous</Button>
+                                <Button
+                                    onClick={this.countinue}
+                                    style={{ width: 200 }}
+                                >Next</Button>
+                            </div>
                         </Box>
                     </Grid>
                 </Grid>

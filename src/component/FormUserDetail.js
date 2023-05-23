@@ -60,7 +60,6 @@ export class FormUserDetail extends Component {
                 placeholder="Enter Your Name"
                 onChange={handleChange("Name")}
                 defaultValue={values.Name}
-                required="true"
               />
               <p>Email Address</p>
               <TextField
@@ -68,7 +67,6 @@ export class FormUserDetail extends Component {
                 placeholder="Enter Your Email Address"
                 onChange={handleChange("EmailAddress")}
                 defaultValue={values.EmailAddress}
-                required="true"
               />
               <p>Name</p>
               <TextField
@@ -76,7 +74,6 @@ export class FormUserDetail extends Component {
                 placeholder="Enter Your Phone Number"
                 onChange={handleChange("PhoneNumber")}
                 defaultValue={values.PhoneNumber}
-                required="true"
               />
 
               <Button
