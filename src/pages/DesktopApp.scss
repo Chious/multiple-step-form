@@ -1,0 +1,79 @@
+@import "../style/variable.scss";
+
+.form-container {
+  padding: 30px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    label {
+      color: $color-marine-blue;
+      font-weight: $font-weight-400;
+    }
+
+    input {
+      color: $color-marine-blue;
+      height: 30px;
+      background: $color-white;
+      border: 1px solid $color-light-gray;
+      border-radius: 3px;
+      text-indent: 10px;
+    }
+  }
+}
+
+.stepper-desktop {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+
+  position: absolute;
+  z-index: 5;
+  top: 15%;
+  left: 15%;
+
+  .step-group {
+    display: flex;
+    gap: 9px;
+    justify-content: center;
+    align-items: center;
+
+    .step {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid $color-white;
+      border-radius: 50px;
+
+      width: 40px;
+      height: 40px;
+
+      font-weight: $font-weight-700;
+    }
+    .desc {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+
+      .desc-step {
+        color: $color-light-gray;
+      }
+
+      .desc-title {
+        color: $color-white;
+        font-weight: $font-weight-700;
+      }
+    }
+  }
+}
