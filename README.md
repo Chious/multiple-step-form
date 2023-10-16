@@ -56,7 +56,7 @@ Users should be able to:
 
 2. Finished `Stepper` and `StepController` (1hr)
 
-![https://file.notion.so/f/f/a3329b51-a207-43ca-8d9d-85d01045e23a/00ed7fad-4bca-43f6-9a9a-293f3d91f5b6/截圖_2023-10-10_下午3.53.23.png?id=448c52c4-1d16-4858-a1ec-490f369e1a3d&table=block&spaceId=a3329b51-a207-43ca-8d9d-85d01045e23a&expirationTimestamp=1697508000000&signature=DVVmnabVNOaHOIxVXr9EqH_Z0j2SoZn3jN8OujVnWUw&downloadName=截圖+2023-10-10+下午3.53.23.png]
+![](https://file.notion.so/f/f/a3329b51-a207-43ca-8d9d-85d01045e23a/00ed7fad-4bca-43f6-9a9a-293f3d91f5b6/截圖_2023-10-10_下午3.53.23.png?id=448c52c4-1d16-4858-a1ec-490f369e1a3d&table=block&spaceId=a3329b51-a207-43ca-8d9d-85d01045e23a&expirationTimestamp=1697508000000&signature=DVVmnabVNOaHOIxVXr9EqH_Z0j2SoZn3jN8OujVnWUw&downloadName=截圖+2023-10-10+下午3.53.23.png)
 
 - `StepController` should add or minous the `stage` conditionally
 - check if `stageValid` is `true`. If not, `button` should not trigger
@@ -65,7 +65,7 @@ Users should be able to:
 
 - should check if form is valid and return value to `stageValid`
 
-![https://file.notion.so/f/f/a3329b51-a207-43ca-8d9d-85d01045e23a/35c76ca5-9ed6-4c26-ada0-e91e0cdad80a/截圖_2023-10-11_下午4.12.49.png?id=b9074bd9-22d2-4f3f-98c9-0498a466755b&table=block&spaceId=a3329b51-a207-43ca-8d9d-85d01045e23a&expirationTimestamp=1697508000000&signature=_UF-GaXy15ipOM8sKUyLyf6JkjZXZF1jdArlVETP74E&downloadName=截圖+2023-10-11+下午4.12.49.png]
+![](https://file.notion.so/f/f/a3329b51-a207-43ca-8d9d-85d01045e23a/35c76ca5-9ed6-4c26-ada0-e91e0cdad80a/截圖_2023-10-11_下午4.12.49.png?id=b9074bd9-22d2-4f3f-98c9-0498a466755b&table=block&spaceId=a3329b51-a207-43ca-8d9d-85d01045e23a&expirationTimestamp=1697508000000&signature=_UF-GaXy15ipOM8sKUyLyf6JkjZXZF1jdArlVETP74E&downloadName=截圖+2023-10-11+下午4.12.49.png)
 
 4. enable `cartInfo` and `setCartInfo` access to `Step1` ~ `Step4` (2hr)
 
