@@ -17,7 +17,7 @@ export const FormProvider = ({ children }) => {
       email: null,
       phone: "",
     },
-    plan: 1,
+    plan: null,
     yearly: "month",
     addon: {
       1: false,

@@ -5,6 +5,20 @@ import { useForm, planList } from "../../contexts/FormContext";
 import { useEffect, useState } from "react";
 
 export default function Step2() {
+  const { cartInfo, setStageVaild, stage } = useForm();
+
+  useEffect(() => {
+    const plan = cartInfo.plan;
+
+    if (plan === null && stage === 2) {
+      setStageVaild(false);
+    }
+
+    if (plan !== null && stage === 2) {
+      setStageVaild(true);
+    }
+  }, [stage, cartInfo]);
+
   return (
     <div className="form-container">
       <h1>Select your plan</h1>

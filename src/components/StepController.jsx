@@ -10,6 +10,10 @@ export default function StepController({ isMobile, className }) {
     if (stage < 4 && stageVaild) {
       setStage(stage + 1);
     }
+
+    if (!stageVaild) {
+      alert("Some of form should not be empty!");
+    }
   };
 
   const handlePrev = () => {
@@ -53,15 +57,23 @@ export default function StepController({ isMobile, className }) {
   };
 
   return (
-    <div className={className} style={{ MobileStyle }}>
-      <div className="btn-container">
-        <button onClick={handlePrev} style={setBtnStyle("prev")}>
-          Go Back
-        </button>
-        <button onClick={handleNext} style={setBtnStyle("next")}>
-          {stage !== 4 ? `Next Step` : `Confirm`}
-        </button>
+    <>
+      <div className={className} style={{ MobileStyle }}>
+        <div className="btn-container">
+          <button onClick={handlePrev} style={setBtnStyle("prev")}>
+            Go Back
+          </button>
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              handleNext();
+            }}
+            style={setBtnStyle("next")}
+          >
+            {stage !== 4 ? `Next Step` : `Confirm`}
+          </button>
+        </div>
       </div>
-    </div>
+    </>
   );
 }

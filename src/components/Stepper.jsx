@@ -6,8 +6,8 @@ export const Stepper = () => {
   const setStyle = (targetStage) => {
     const Trigger = {
       background: "#BEE2FD",
-      textColor: "none",
       borderColor: "#BEE2FD",
+      color: "white",
     };
 
     if (stage >= targetStage) {
@@ -33,7 +33,7 @@ export const Stepper = () => {
   );
 };
 
-export const DesktopStepper = ({ className }) => {
+export const DesktopStepper = () => {
   const { stage } = useForm();
 
   const setStyle = (targetStage) => {
@@ -45,7 +45,7 @@ export const DesktopStepper = ({ className }) => {
 
     const Trigger = {
       background: "#BEE2FD",
-      color: "none",
+      color: "white",
       borderColor: "#BEE2FD",
     };
 
@@ -75,8 +75,8 @@ export const DesktopStepper = ({ className }) => {
         </div>
 
         <div className="desc">
-          <p className="desc-step">STEP1</p>
-          <p className="desc-title">YOUR INFO</p>
+          <p className="desc-step">STEP2</p>
+          <p className="desc-title">SELECT PLAN</p>
         </div>
       </div>
       <div className="step-group">
